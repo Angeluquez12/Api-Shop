@@ -1,0 +1,87 @@
+:root {
+  --soft-color: rgba(0, 0, 0, 0.5);
+  --softer-color: rgba(0, 0, 0, 0.2);
+  --color-primary: rgb(0 216 255);
+  --color-warning: #28a745; /* Cambié el color warning a un verde más estandarizado */
+  --color-white: #fff;
+  --color-danger: #ff0000;
+  --background-light: #f9f9f9; /* Nuevo color de fondo claro */
+  --shadow-soft: rgba(0, 0, 0, 0.1); /* Sombra suave para un look moderno */
+  --border-color: rgba(0, 0, 0, 0.1); /* Color de borde más suave */
+}
+
+/* Eliminación de scrollbar para una mejor apariencia en webkit */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilos del contenedor principal */
+.body__container {
+  width: 80%;
+  margin: 2rem auto;
+  background-color: var(--background-light); /* Fondo claro para mejorar contraste */
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0px 4px 12px var(--shadow-soft); /* Sombra ligera */
+  transition: box-shadow 0.3s ease;
+}
+
+.body__container:hover {
+  box-shadow: 0px 6px 16px var(--shadow-soft); /* Efecto hover para dar profundidad */
+}
+
+/* Barra de navegación */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 4px 10px var(--softer-color);
+  padding: 1rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--color-white);
+  position: sticky;
+  top: 0;
+  z-index: 10; /* Aumenta z-index para asegurar la visibilidad */
+  transition: background-color 0.3s ease;
+}
+
+.nav:hover {
+  background-color: var(--soft-color); /* Efecto hover para la navegación */
+}
+
+/* Sección derecha de la barra de navegación */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+@media screen and (max-width: 1040px) {
+  .body__container {
+    width: 95%;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 1rem; /* Espacio entre los elementos al cambiar de dirección */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .body__container {
+    width: 100%;
+  }
+
+  .nav-right {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Estilos para impresión */
+@media print {
+  .nav {
+    display: none;
+  }
+}

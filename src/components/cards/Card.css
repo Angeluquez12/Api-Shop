@@ -1,0 +1,95 @@
+.card {
+  box-shadow: 1px 1px 8px var(--softer-color);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: var(--color-white); /* Fondo blanco para resaltar la tarjeta */
+}
+
+.card__img {
+  width: 100%;
+  border-radius: 0.5rem; /* Redondea las esquinas de las imágenes */
+  object-fit: cover; /* Asegura que la imagen se ajuste bien en su contenedor */
+  transition: transform 0.3s ease;
+}
+
+.card__img:hover {
+  transform: scale(1.05); /* Efecto hover para darle más dinamismo a la imagen */
+}
+
+.card p {
+  color: var(--soft-color);
+  line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+
+.card h4,
+p {
+  margin: 0.75rem auto;
+}
+
+.card h2 {
+  text-decoration: underline;
+  color: var(--color-primary); /* Resalta el título con el color primario */
+}
+
+.card:hover {
+  box-shadow: 0px 4px 15px var(--softer-color);
+  transform: translateY(-5px); /* Levanta ligeramente la tarjeta al hacer hover */
+}
+
+.card-price-add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.add-item-btn,
+.remove-item-btn {
+  width: fit-content;
+  padding: 0.6rem 1.25rem;
+  font-size: 1rem;
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s ease-in-out;
+}
+
+.remove-item-btn {
+  border-color: var(--color-danger);
+  color: var(--color-danger);
+}
+
+.add-item-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño en hover */
+}
+
+.remove-item-btn:hover {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño en hover */
+}
+
+/* Ajustes para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .card__img {
+    width: 100%;
+  }
+
+  .add-item-btn,
+  .remove-item-btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

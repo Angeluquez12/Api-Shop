@@ -1,0 +1,35 @@
+.card__body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Utiliza repeat para mayor claridad */
+  gap: 1.5rem;
+  padding: 1rem; /* Añade un poco de padding para que las tarjetas no toquen los bordes */
+  align-items: start; /* Alinea las tarjetas al inicio */
+}
+
+@media screen and (max-width: 1040px) {
+  .card__body {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem; /* Un poco más de espacio entre las tarjetas en pantallas medianas */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card__body {
+    grid-template-columns: 1fr; /* Todas las tarjetas en una sola columna en pantallas pequeñas */
+    gap: 1rem; /* Mantén el espacio entre las tarjetas */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .card__body {
+    grid-template-columns: 1fr;
+    gap: 0.75rem; /* Un espacio más reducido en pantallas muy pequeñas */
+    padding: 0.5rem; /* Ajusta el padding para dispositivos muy pequeños */
+  }
+}
+
+@media print {
+  .card__body {
+    display: none; /* Oculta las tarjetas al imprimir */
+  }
+}
